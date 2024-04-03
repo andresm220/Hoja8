@@ -91,23 +91,23 @@ public class Hospital {
 class Paciente implements Comparable<Paciente> {
     private String nombre;
     private String sintoma;
-    private char prioridad;
+    private char codigo;
 
     // Constructor para crear un nuevo paciente
-    public Paciente(String nombre, String sintoma, char prioridad) {
+    public Paciente(String nombre, String sintoma, char codigo ) {
         this.nombre = nombre;
         this.sintoma = sintoma;
-        this.prioridad = prioridad;
+        this.codigo = codigo;
     }
 
     // Método para comparar pacientes por prioridad
     @Override
     public int compareTo(Paciente otro) {
-        return this.prioridad - otro.prioridad;
+        return this.codigo - otro.codigo;
     }
 
     // Método para imprimir la información del paciente
     public void printInfo() {
-        System.out.println(nombre + ", " + sintoma + ", " + prioridad);
+        System.out.println(nombre + ", " + sintoma + ", " + codigo);
     }
 }
