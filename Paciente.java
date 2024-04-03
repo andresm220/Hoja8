@@ -1,29 +1,22 @@
 public class Paciente implements Comparable<Paciente> {
+    
     private String nombre;
     private String sintoma;
-    private char codigoEmergencia;
-    
-    public Paciente(String nombre, String sintoma, char codigoEmergencia) {
+    private char codigo;
+
+
+    public Paciente(String nombre, String sintoma, char codigo) {
         this.nombre = nombre;
         this.sintoma = sintoma;
-        this.codigoEmergencia = codigoEmergencia;
+        this.codigo = codigo;
     }
-    
-    public String getNombre() {
-        return nombre;
-    }
-    
-    public String getSintoma() {
-        return sintoma;
-    }
-    
-    public char getCodigoEmergencia() {
-        return codigoEmergencia;
-    }
-    
+
     @Override
     public int compareTo(Paciente otro) {
-        return Character.compare(this.codigoEmergencia, otro.getCodigoEmergencia());
+        return this.codigo - otro.codigo;
+    }
+
+    public void printInfo() {
+        System.out.println(nombre + ", " + sintoma + ", " + codigo );
     }
 }
-
